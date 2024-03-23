@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "01": "bun 01_helloapi/index.ts",
-    "02": "bun 02_moderation/index.ts"
+    "02": "bun 02_moderation/index.ts",
+    "03": "bun 03_blogger/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"

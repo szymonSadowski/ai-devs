@@ -68,12 +68,12 @@ export async function sendAnswer(props: SendAnswerProps) {
         answer: props.answer,
       }),
     });
-
     const data = await response.json();
+    console.info(data);
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status}`);
     }
-    console.log("Answer Response: ", data);
+    console.info("Answer Response: ", data);
     return data;
   } catch (error) {
     console.error("Error when sending answer:", error);
