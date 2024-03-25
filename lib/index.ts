@@ -53,6 +53,45 @@ export async function useTaskData<T>(taskName: string) {
   return null;
 }
 
+type SendTaskDataType = {
+  token: string;
+  question: string;
+};
+export async function sendTaskData({ token, question }: SendTaskDataType) {
+  try {
+    const formData = new FormData();
+    formData.append("question", question);
+    const response = await fetch(endpoints.task.getTask + token, {
+      method: "POST",
+      body: formData,
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching task data:", error);
+  }
+}
+
+export async function useSendTaskData<T>(taskName: string, question: string) {
+  const token = await getToken(taskName);
+  if (token) {
+    const props = {
+      token: token,
+      question: question,
+    };
+    const task = (await sendTaskData(props)) as T;
+    const taskData = {
+      token: token,
+      task: task,
+    };
+    return taskData;
+  }
+  return null;
+}
+
 type SendAnswerProps = {
   answer: any;
   token: string | undefined;
