@@ -6,7 +6,8 @@
     "01": "bun 01_helloapi/index.ts",
     "02": "bun 02_moderation/index.ts",
     "03": "bun 03_blogger/index.ts",
-    "04": "bun 04_liar/index.ts"
+    "04": "bun 04_liar/index.ts",
+    "05": "bun 05_inprompt/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
