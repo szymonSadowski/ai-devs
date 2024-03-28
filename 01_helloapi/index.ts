@@ -1,13 +1,12 @@
 import { sendAnswer, useTaskData } from "../lib";
+import type { TaskType } from "../lib/types";
 
-type HelloApiAnswer = {
+type HelloApi = TaskType & {
   cookie: string;
-  code: number;
-  msg: string;
 };
 
 const helloApi = async () => {
-  const data = await useTaskData<HelloApiAnswer>("helloapi");
+  const data = await useTaskData<HelloApi>("helloapi");
   const answer = {
     token: data?.token,
     answer: data?.task.cookie,

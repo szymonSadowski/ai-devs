@@ -1,11 +1,10 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { sendAnswer, useTaskData } from "../lib";
 import { PromptTemplate } from "langchain/prompts";
+import type { TaskType } from "../lib/types";
 
-type Blogger = {
+type Blogger = TaskType & {
   blog: Array<string>;
-  code: number;
-  msg: string;
 };
 
 const moderation = async () => {

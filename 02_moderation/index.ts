@@ -1,14 +1,13 @@
 import { sendAnswer, useTaskData } from "../lib";
 import { OpenAIModerationChain } from "langchain/chains";
+import type { TaskType } from "../lib/types";
 
-type Task = {
+type Moderation = TaskType & {
   input: string;
-  code: number;
-  msg: string;
 };
 
 const moderation = async () => {
-  const data = await useTaskData<Task>("moderation");
+  const data = await useTaskData<Moderation>("moderation");
 
   try {
     const moderation = new OpenAIModerationChain();

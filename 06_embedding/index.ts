@@ -1,9 +1,8 @@
 import OpenAI from "openai";
 import { sendAnswer, useTaskData } from "../lib";
+import type { TaskType } from "../lib/types";
 
-type Embedding = {
-  code: number;
-  msg: string;
+type Embedding = TaskType & {
   hint1: string;
   hint2: string;
   hint3: string;

@@ -1,10 +1,9 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { sendAnswer, sendTaskData, useSendTaskData, useTaskData } from "../lib";
 import { PromptTemplate } from "langchain/prompts";
+import type { TaskType } from "../lib/types";
 
-type Inprompt = {
-  code: number;
-  msg: string;
+type Inprompt = TaskType & {
   input: Array<string>;
   question: string;
 };

@@ -1,11 +1,10 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { sendAnswer, sendTaskData, useSendTaskData } from "../lib";
 import { PromptTemplate } from "langchain/prompts";
+import type { TaskType } from "../lib/types";
 
-type Liar = {
+type Liar = TaskType & {
   answer: string;
-  code: number;
-  msg: string;
 };
 
 const question = "What is the capitol city of Portugal";
