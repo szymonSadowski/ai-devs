@@ -10,7 +10,8 @@
     "05": "bun 05_inprompt/index.ts",
     "06": "bun 06_embedding/index.ts",
     "07": "bun 07_whisper/index.ts",
-    "08": "bun 08_functions/index.ts"
+    "08": "bun 08_functions/index.ts",
+    "09": "bun 09_rodo/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
