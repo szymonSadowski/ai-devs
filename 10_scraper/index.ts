@@ -47,7 +47,7 @@ async function fetchArticle(url: string) {
 
 const systemTemplate = `Message: {message} ###context {article}###`;
 const humanTemplate = `Pytanie {question}`;
-const chatPromptTemplate = ChatPromptTemplate.fromPromptMessages([
+const chatPromptTemplate = ChatPromptTemplate.fromMessages([
   ["system", systemTemplate],
   ["human", humanTemplate],
 ]);
@@ -55,7 +55,6 @@ const chatPromptTemplate = ChatPromptTemplate.fromPromptMessages([
 const scraper = async () => {
   const data = await useTaskData<Scraper>("scraper");
   const chat = new ChatOpenAI();
-  console.log(data);
   if (!data) return;
   try {
     const article = await fetchArticle(data.task.input);
@@ -67,7 +66,6 @@ const scraper = async () => {
       question,
     });
     const { content } = await chat.invoke(chatPrompt);
-    console.log(content);
     const answer = {
       token: data?.token,
       answer: content,
