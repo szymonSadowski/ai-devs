@@ -1,4 +1,3 @@
-import OpenAI from "openai";
 import { sendAnswer, useTaskData } from "../lib";
 import type { TaskType } from "../lib/types";
 
