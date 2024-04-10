@@ -9,6 +9,7 @@
     "13": "bun 13_people/index.ts",
     "14": "bun 14_knowledge/index.ts",
     "15": "bun 15_tools/index.ts",
+    "16": "bun 16_gnome/index.ts",
     "create": "bun lib/create-script.ts",
     "format": "prettier --write package.json",
     "01": "bun 01_helloapi/index.ts",
