@@ -1,15 +1,15 @@
-const express = require("express");
+import express, { Request, Response } from "express";
+
 const cors = require("cors");
 const app = express();
 const port = 8080;
-require("dotenv").config();
 
 const { default: OpenAI } = require("openai");
 const openai = new OpenAI();
 
 app.use(cors());
 app.use(express.json());
-app.post("/answer", async (req, res) => {
+app.post("/answer", async (req: Request, res: Response) => {
   try {
     console.log(req.body.question);
     const gptResponse = await openai.chat.completions.create({
