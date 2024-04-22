@@ -15,6 +15,7 @@
     "19": "bun 19_meme/index.ts",
     "20": "bun 20_optimaldb/index.ts",
     "21": "bun 21_google/index.ts",
+    "22": "bun 22_md2html/index.ts",
     "create": "bun lib/create-script.ts",
     "format": "prettier --write package.json",
     "01": "bun 01_helloapi/index.ts",
